@@ -73,4 +73,4 @@ REVOKE REFERENCES, TRIGGER ON ALL TABLES IN SCHEMA public FROM gerente;
 -- Ver privilegios
 SELECT grantee, privilege_type, table_name
 FROM information_schema.role_table_grants
-WHERE grantee='gerente' OR grantee=='operador';
+WHERE grantee='gerente';
