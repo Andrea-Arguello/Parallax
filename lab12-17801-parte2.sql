@@ -54,7 +54,7 @@ FROM information_schema.role_table_grants
 WHERE grantee='operador';
 
 -- Lectura y escritura gerente
-GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA public TO gerente;
+GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE, TRIGGER, REFERENCES ON ALL TABLES IN SCHEMA public TO gerente;
 
 -- Ver privilegios
 SELECT grantee, privilege_type, table_name
@@ -69,7 +69,6 @@ SELECT usename, usecreatedb, usesuper FROM pg_user;
 
 -- Revocar permisos
 REVOKE REFERENCES, TRIGGER ON ALL TABLES IN SCHEMA public FROM gerente;
-REVOKE REFERENCES, TRIGGER ON ALL TABLES IN SCHEMA public FROM operador;
 
 -- Ver privilegios
 SELECT grantee, privilege_type, table_name
